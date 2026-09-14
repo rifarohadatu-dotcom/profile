@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Rohadatu Rifana</title>
+    <!-- Google Fonts untuk nuansa retro/pixel dan clean text -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #e0f2fe;
+            --primary-purple: #6366f1;
+            --dark-purple: #4338ca;
+            --light-purple: #e0e7ff;
+            --box-bg: #ffffff;
+            --text-dark: #1e1b4b;
+            --accent-pink: #f472b6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f8fafc;
+            border: 4px solid var(--dark-purple);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 8px 8px 0px var(--dark-purple);
+        }
+
+        /* Header / Banner Utama */
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #a5b4fc, #c7d2fe);
+            border: 3px solid var(--dark-purple);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .cv-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.2rem;
+            color: white;
+            background: var(--dark-purple);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 4px 4px 0 var(--accent-pink);
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.6rem;
+            color: var(--dark-purple);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 white;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4f46e5;
+            background: white;
+            display: inline-block;
+            padding: 4px 15px;
+            border-radius: 20px;
+            border: 2px solid var(--dark-purple);
+        }
+
+        /* Informasi Kontak */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px dashed var(--primary-purple);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--dark-purple);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Layout Grid Konten Utama */
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Desain Blok / Kartu Data */
+        .card {
+            background: var(--box-bg);
+            border: 3px solid var(--dark-purple);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 5px 5px 0px var(--primary-purple);
+            position: relative;
+        }
+
+        .card-header {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.85rem;
+            background: var(--dark-purple);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: -35px;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 3px 3px 0 var(--accent-pink);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-pink);
+            font-weight: bold;
+        }
+
+        .sub-time {
+            display: block;
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        /* Motivasi */
+        .motivation-card {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: linear-gradient(to right, #fef08a, #fef9c3);
+            border-style: double;
+            border-width: 6px;
+        }
+
+        .motivation-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #7c2d12;
+        }
+
+        /* Hobi Badges */
+        .hobby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hobby-badge {
+            background: var(--light-purple);
+            border: 2px solid var(--primary-purple);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="cv-title">+ CURRICULUM VITAE +</div>
+        <h1>ROHADATU RIFANA</h1>
+        <div class="subtitle">Pelajar | SMA Negeri 1 Kersana</div>
+        
+        <div class="contact-info">
+            <div class="contact-item">📍 Domisili: Brebes, Jawa Tengah</div>
+            <div class="contact-item">📞 No. HP: <a href="https://wa.me">083872634656</a></div>
+            <div class="contact-item">✉️ Email: <a href="mailto:rifarohadatu@gmail.com">rifarohadatu@gmail.com</a></div>
+        </div>
+    </header>
+
+    <div class="main-grid">
+        <!-- Profil -->
+        <section class="card" style="margin-top: 15px;">
+            <div class="card-header">PROFIL</div>
+            <p>Pelajar SMA yang memiliki minat dalam kegiatan organisasi, kepemimpinan, dan pengembangan diri. Memiliki semangat untuk belajar, berkontribusi dalam kegiatan sekolah, serta meningkatkan kemampuan komunikasi dan public speaking.</p>
+        </section>
+
+        <!-- Pendidikan -->
+        <section class="card" style="margin-top: 15px;">
+            <div class="card-header">PENDIDIKAN</div>
+            <p><strong>SMA Negeri 1 Kersana</strong></p>
+            <span class="sub-time">Kelas 10 — 2026-sekarang</span>
+        </section>
+
+        <!-- Pengalaman Organisasi -->
+        <section class="card" style="margin-top: 15px;">
+            <div class="card-header">PENGALAMAN ORGANISASI</div>
+            <ul>
+                <li><strong>Kegiatan MPK (Koord. Komisi A)</strong><span class="sub-time">2026-sekarang</span></li>
+                <li><strong>Kegiatan PIK-R</strong><span class="sub-time">2026-sekarang</span></li>
+                <li><strong>Seleksi Forum Anti Narkoba</strong><span class="sub-time">2026</span></li>
+            </ul>
+        </section>
+
+        <!-- Prestasi & Sertifikat -->
+        <section class="card" style="margin-top: 15px;">
+            <div class="card-header">PRESTASI & SERTIFIKAT</div>
+            <ul>
+                <li>Sertifikat Olimpiade Geografis</li>
+                <li>Piagam Penghargaan Popda Karate tingkat kabupaten</li>
+                <li>Sertifikat Semifinalis Duta Pelajar Rabbani 2025 tingkat provinsi</li>
+                <li>Sertifikat Tahfidzul Qur'an Juz 30</li>
+            </ul>
+        </section>
+
+        <!-- Keterampilan -->
+        <section class="card" style="margin-top: 15px;">
+            <div class="card-header">KETERAMPILAN</div>
+            <ul>
+                <li>Komunikasi</li>
+                <li>Kerja sama tim</li>
+                <li>Kepemimpinan</li>
+                <li>Kreativitas</li>
+                <li>Bertanggung jawab</li>
+            </ul>
+        </section>
+
+        <!-- Hobi -->
+        <section class="card" style="margin-top: 15px;">
+            <div class="card-header">HOBI</div>
+            <div class="hobby-list" style="margin-top: 10px;">
+                <span class="hobby-badge">🎸 Bermain gitar</span>
+                <span class="hobby-badge">✈️ Traveling</span>
+                <span class="hobby-badge">💡 Mengembangkan kreativitas</span>
+            </div>
+        </section>
+
+        <!-- Motivasi -->
+        <section class="card motivation-card" style="margin-top: 15px;">
+            <div class="card-header">MOTIVASI</div>
+            <p class="motivation-text">"Jangan berhenti di tengah jalan, karena setiap usaha kecil hari ini adalah langkah besar untuk masa depan."</p>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
