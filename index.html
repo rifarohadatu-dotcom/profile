@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowchart Memeriksa Payung</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px;
+      color: #1e293b;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #1e3a8a;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: #64748b;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Gaya Elemen Flowchart */
+    .terminal {
+      fill: #1d63b8;
+      stroke: #154c91;
+      stroke-width: 2;
+    }
+
+    .terminal-text {
+      fill: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    .process {
+      fill: #e8f1fb;
+      stroke: #2b7de9;
+      stroke-width: 2;
+      rx: 6;
+      ry: 6;
+    }
+
+    .process-text {
+      fill: #1e293b;
+      font-size: 13px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+
+    .decision {
+      fill: #fef5d4;
+      stroke: #eab308;
+      stroke-width: 2;
+    }
+
+    .decision-text {
+      fill: #1e293b;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-anchor: middle;
+    }
+
+    .connector {
+      fill: none;
+      stroke: #2b7de9;
+      stroke-width: 2;
+    }
+
+    .label-text {
+      fill: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      text-anchor: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FLOWCHART MEMERIKSA PAYUNG</h1>
+    <p class="subtitle">Sebelum Berangkat ke Sekolah atau Kerja</p>
+  </header>
+
+  <div class="card">
+    <svg viewBox="0 0 700 720" xmlns="http://w3.org">
+      <!-- Definisi Ujung Panah -->
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#2b7de9" />
+        </marker>
+      </defs>
+
+      <!-- 1. MULAI -->
+      <ellipse cx="350" cy="40" rx="75" ry="22" class="terminal" />
+      <text x="350" y="41" class="terminal-text">MULAI</text>
+
+      <!-- Panah ke Periksa Prakiraan Cuaca -->
+      <line x1="350" y1="62" x2="350" y2="98" class="connector" marker-end="url(#arrow)" />
+
+      <!-- 2. Periksa prakiraan cuaca -->
+      <rect x="245" y="100" width="210" height="46" class="process" />
+      <text x="350" y="127" class="process-text">Periksa prakiraan cuaca</text>
+
+      <!-- Panah ke Decision 1 -->
+      <line x1="350" y1="146" x2="350" y2="183" class="connector" marker-end="url(#arrow)" />
+
+      <!-- 3. Decision 1: Apakah diperkirakan hujan? -->
+      <polygon points="350,185 465,235 350,285 235,235" class="decision" />
+      <text x="350" y="231" class="decision-text">Apakah diperkirakan</text>
+      <text x="350" y="247" class="decision-text">hujan?</text>
+
+      <!-- Cabang Kiri (TIDAK) -->
+      <polyline points="235,235 125,235 125,313" class="connector" marker-end="url(#arrow)" />
+      <text x="180" y="226" class="label-text">TIDAK</text>
+
+      <!-- 4a. Tidak perlu membawa payung -->
+      <rect x="30" y="315" width="190" height="52" class="process" />
+      <text x="125" y="337" class="process-text">Tidak perlu membawa</text>
+      <text x="125" y="354" class="process-text">payung</text>
+
+      <!-- Garis dari 4a langsung ke SELESAI -->
+      <polyline points="125,367 125,675 273,675" class="connector" marker-end="url(#arrow)" />
+
+      <!-- Cabang Kanan (YA) -->
+      <polyline points="465,235 550,235 550,313" class="connector" marker-end="url(#arrow)" />
+      <text x="508" y="226" class="label-text">YA</text>
+
+      <!-- 4b. Periksa kondisi payung -->
+      <rect x="455" y="315" width="190" height="46" class="process" />
+      <text x="550" y="342" class="process-text">Periksa kondisi payung</text>
+
+      <!-- Panah ke Decision 2 -->
+      <line x1="550" y1="361" x2="550" y2="398" class="connector" marker-end="url(#arrow)" />
+
+      <!-- 5. Decision 2: Apakah payung masih layak? -->
+      <polygon points="550,400 645,445 550,490 455,445" class="decision" />
+      <text x="550" y="441" class="decision-text">Apakah payung</text>
+      <text x="550" y="457" class="decision-text">masih layak?</text>
+
+      <!-- Cabang Kiri Decision 2 (YA) -->
+      <polyline points="455,445 380,445 380,518" class="connector" marker-end="url(#arrow)" />
+      <text x="418" y="436" class="label-text">YA</text>
+
+      <!-- 6a. Bawa payung (Tengah) -->
+      <rect x="300" y="520" width="160" height="46" class="process" />
+      <text x="380" y="547" class="process-text">Bawa payung</text>
+
+      <!-- Panah dari 6a lurus ke SELESAI -->
+      <line x1="380" y1="566" x2="380" y2="651" class="connector" marker-end="url(#arrow)" />
+
+      <!-- Cabang Kanan Decision 2 (TIDAK) -->
+      <polyline points="645,445 675,445 675,495 585,495 585,518" class="connector" marker-end="url(#arrow)" />
+      <text x="665" y="436" class="label-text">TIDAK</text>
+
+      <!-- 6b. Perbaiki atau cari payung pengganti -->
+      <rect x="490" y="520" width="190" height="52" class="process" />
+      <text x="585" y="542" class="process-text">Perbaiki atau cari</text>
+      <text x="585" y="559" class="process-text">payung pengganti</text>
+
+      <!-- Panah ke 7b -->
+      <line x1="585" y1="572" x2="585" y2="598" class="connector" marker-end="url(#arrow)" />
+
+      <!-- 7b. Bawa payung (Kanan Bawah) -->
+      <rect x="505" y="600" width="160" height="42" class="process" />
+      <text x="585" y="625" class="process-text">Bawa payung</text>
+
+      <!-- Garis dari 7b ke SELESAI -->
+      <polyline points="585,642 585,675 427,675" class="connector" marker-end="url(#arrow)" />
+
+      <!-- 8. SELESAI -->
+      <ellipse cx="350" cy="675" rx="75" ry="22" class="terminal" />
+      <text x="350" y="676" class="terminal-text">SELESAI</text>
+    </svg>
+  </div>
+
+</body>
+</html>
